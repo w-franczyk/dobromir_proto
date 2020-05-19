@@ -5,15 +5,19 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-struct dbr_usb_request_hdr
+  
+#define REPORT_PERIPHERALS_ID 1
+struct report_peripherals
 {
-    uint8_t request_type;
-    uint8_t request_nb;
-    uint16_t value;
-    uint16_t index;
-    uint16_t length;
-};
+  uint8_t id;
+  uint8_t joy_x;
+  uint8_t joy_y;
+  uint8_t buttons;
+  uint8_t axis_z;
+} __attribute((packed))__;
+
+void init_report_peripherals(struct report_peripherals* report);
+
 
 
 #ifdef __cplusplus
