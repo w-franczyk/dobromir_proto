@@ -25,8 +25,16 @@ struct report_ping
   uint8_t dummy;
 } __attribute__((packed));
 
+#define REPORT_PONG_ID 3
+struct report_pong
+{
+  uint8_t id;
+  uint8_t dummy;
+} __attribute__((packed));
+
 void init_report_peripherals(struct report_peripherals* report);
 void init_report_ping(struct report_ping* report);
+void init_report_pong(struct report_pong* report);
 
 #ifdef __cplusplus
 }

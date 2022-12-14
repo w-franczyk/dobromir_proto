@@ -14,3 +14,9 @@ void init_report_ping(struct report_ping* report)
   report->id = REPORT_PING_ID;
   report->dummy = 0x9;
 }
+
+void init_report_pong(struct report_pong* report)
+{
+  report->id = REPORT_PONG_ID;
+  report->dummy = 0xa;
+}
